@@ -1,0 +1,57 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   ErrorBanner Component Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.error-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-danger-bg);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--radius-md);
+  color: var(--color-danger);
+  margin-bottom: var(--space-6);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
+}
+
+.error-banner--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.error-banner__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  color: var(--color-danger);
+}
+
+.error-banner__message {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.error-banner__dismiss {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--color-danger);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.error-banner__dismiss:hover {
+  background: rgba(239, 68, 68, 0.15);
+}

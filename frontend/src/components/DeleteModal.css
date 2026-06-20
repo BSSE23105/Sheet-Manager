@@ -1,0 +1,127 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   DeleteModal Component Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.delete-modal {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-8);
+  text-align: center;
+  animation: fadeInScale var(--transition-slow) cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.delete-modal__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  margin-bottom: var(--space-4);
+}
+
+.delete-modal__title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.02em;
+}
+
+.delete-modal__message {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-5);
+}
+
+.delete-modal__message strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* ── Record Info ─────────────────────────────────────────────────────────── */
+
+.delete-modal__info {
+  background: var(--color-bg-input);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-6);
+  text-align: left;
+}
+
+.delete-modal__info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-1) 0;
+}
+
+.delete-modal__info-row + .delete-modal__info-row {
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-1);
+  padding-top: var(--space-2);
+}
+
+.delete-modal__info-label {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.delete-modal__info-value {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* ── Actions ─────────────────────────────────────────────────────────────── */
+
+.delete-modal__actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+.delete-modal__actions .btn {
+  flex: 1;
+}
+
+/* ── Danger Button ───────────────────────────────────────────────────────── */
+
+.btn--danger {
+  background: var(--color-danger);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: var(--color-danger-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.btn-spinner--danger {
+  border-color: rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .delete-modal {
+    padding: var(--space-6);
+  }
+
+  .delete-modal__actions {
+    flex-direction: column-reverse;
+  }
+}

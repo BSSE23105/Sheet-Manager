@@ -1,0 +1,202 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   RecordTable Component Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Table Wrapper ───────────────────────────────────────────────────────── */
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  animation: fadeInUp var(--transition-slow) ease-out;
+}
+
+/* ── Table ────────────────────────────────────────────────────────────────── */
+
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.records-table thead {
+  background: var(--color-bg-elevated);
+}
+
+.records-table th {
+  padding: var(--space-4) var(--space-5);
+  text-align: left;
+  font-weight: 600;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.records-table td {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+/* ── Row Animation ───────────────────────────────────────────────────────── */
+
+.records-table__row {
+  animation: fadeInUp var(--transition-base) ease-out both;
+  transition: background var(--transition-fast);
+}
+
+.records-table__row:hover {
+  background: var(--color-bg-hover);
+}
+
+.records-table__row:last-child td {
+  border-bottom: none;
+}
+
+/* ── Cell Styles ─────────────────────────────────────────────────────────── */
+
+.id-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-accent-glow);
+  color: var(--color-accent-hover);
+  font-weight: 600;
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.name-text {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.email-text {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.department-tag {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background: rgba(139, 92, 246, 0.1);
+  color: #a78bfa;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.01em;
+}
+
+/* ── Action Buttons ──────────────────────────────────────────────────────── */
+
+.action-buttons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-family);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.action-btn--edit {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--color-accent-hover);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.action-btn--edit:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+}
+
+.action-btn--delete {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.action-btn--delete:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+  transform: translateY(-1px);
+}
+
+/* ── Empty State ─────────────────────────────────────────────────────────── */
+
+.table-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16) var(--space-4);
+  text-align: center;
+  animation: fadeInUp var(--transition-slow) ease-out;
+}
+
+.table-empty__icon {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  opacity: 0.5;
+}
+
+.table-empty__title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.table-empty__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  max-width: 320px;
+}
+
+/* ── Column Widths ───────────────────────────────────────────────────────── */
+
+.col-id { width: 70px; }
+.col-name { min-width: 160px; }
+.col-email { min-width: 200px; }
+.col-department { min-width: 140px; }
+.col-actions { width: 180px; }
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .records-table th,
+  .records-table td {
+    padding: var(--space-3) var(--space-3);
+  }
+
+  .action-btn span {
+    display: none;
+  }
+
+  .action-btn {
+    padding: var(--space-2);
+  }
+
+  .col-actions { width: 90px; }
+}

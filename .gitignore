@@ -1,0 +1,30 @@
+# Environment variables
+.env
+frontend/.env
+
+# Credentials
+credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Node
+node_modules/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Extra docs
+TUNNELING_GUIDE.md
+STEPS_TO_RUN.md

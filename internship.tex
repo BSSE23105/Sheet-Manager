@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\title{Internship Assessment Task}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+\vspace{-2em}
+
+Build a simple full-stack application using React (Frontend) and Python/FastAPI (Backend) that interacts with a private Google Sheet.
+
+\section*{Requirements}
+
+\subsection*{Backend (FastAPI)}
+\begin{enumerate}[topsep=2pt, itemsep=2pt]
+    \item Connect to a private Google Sheet using a Google Service Account.
+    \item Implement complete CRUD functionality with the following endpoints:
+    \begin{itemize}[topsep=2pt, itemsep=2pt]
+        \item \texttt{GET /records} -- Fetch all records.
+        \item \texttt{GET /record/\{id\}} -- Fetch a specific record.
+        \item \texttt{POST /record} -- Create a new record.
+        \item \texttt{PUT /record/\{id\}} -- Update an existing record.
+        \item \texttt{DELETE /record/\{id\}} -- Delete a record.
+    \end{itemize}
+    \item Credentials must be stored securely and not hardcoded.
+    \item Implement proper validation and error handling.
+\end{enumerate}
+
+\subsection*{Frontend (React)}
+Create a simple UI to:
+\begin{enumerate}[topsep=2pt, itemsep=2pt]
+    \item Display records from the Google Sheet in a table.
+    \item Create new records.
+    \item Edit existing records.
+    \item Delete records.
+    \item Handle loading and error states appropriately.
+\end{enumerate}
+
+\subsection*{Google Sheet Structure}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{ID} & \textbf{Name} & \textbf{Email} & \textbf{Department} \\
+\hline
+\end{tabular}
+\end{center}
+
+The ID field should uniquely identify each record and be used for update and delete operations.
+
+\section*{Evaluation Criteria}
+\begin{itemize}[topsep=2pt, itemsep=2pt]
+    \item React and FastAPI fundamentals.
+    \item API design and integration.
+    \item Secure handling of credentials.
+    \item Code quality and project structure.
+    \item Error handling and validation.
+    \item Documentation.
+\end{itemize}
+
+\section*{System Design Question}
+Design a scalable architecture for this application if:
+\begin{itemize}[topsep=2pt, itemsep=2pt]
+    \item The Google Sheet contains 1 million+ records.
+    \item The application serves 10,000 daily active users.
+\end{itemize}
+
+Describe:
+\begin{itemize}[topsep=2pt, itemsep=2pt]
+    \item Proposed architecture
+    \item Database choice
+    \item Caching strategy
+    \item Authentication and security
+    \item Deployment approach
+    \item Limitations of Google Sheets and how you would overcome them
+\end{itemize}
+
+\end{document}

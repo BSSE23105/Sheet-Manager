@@ -1,0 +1,213 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   App Component Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── App Layout ──────────────────────────────────────────────────────────── */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Background Decorations ──────────────────────────────────────────────── */
+
+.app__bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app__bg-glow--1 {
+  top: -15%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.app__bg-glow--2 {
+  bottom: -20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: rgba(139, 92, 246, 0.06);
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+
+.app__header {
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(10, 14, 26, 0.8);
+  backdrop-filter: blur(16px);
+}
+
+.app__header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+}
+
+.app__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.app__logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--gradient-accent);
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+.app__title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.app__subtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 1px;
+}
+
+.app__add-btn {
+  gap: var(--space-2);
+}
+
+.app__add-btn svg {
+  flex-shrink: 0;
+}
+
+/* ── Main Content ────────────────────────────────────────────────────────── */
+
+.app__main {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  padding: var(--space-8) var(--space-6);
+}
+
+.app__container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Stats Bar ───────────────────────────────────────────────────────────── */
+
+.app__stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  animation: fadeIn var(--transition-base) ease-out;
+}
+
+.app__stats-count {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-accent-hover);
+}
+
+.app__stats-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.app__refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-left: var(--space-2);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.app__refresh-btn:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+  background: var(--color-bg-elevated);
+}
+
+.app__refresh-btn:active svg {
+  animation: spin 0.5s ease-out;
+}
+
+/* ── Notification ────────────────────────────────────────────────────────── */
+
+.app__notification {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-success-bg);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: var(--radius-md);
+  color: var(--color-success);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  margin-bottom: var(--space-5);
+  animation: fadeInUp var(--transition-base) ease-out;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+
+.app__footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: var(--space-6);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .app__header-content {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .app__main {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .app__title {
+    font-size: var(--font-size-base);
+  }
+
+  .app__add-btn span {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .app__subtitle {
+    display: none;
+  }
+}
